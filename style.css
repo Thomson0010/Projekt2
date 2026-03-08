@@ -1,0 +1,102 @@
+:root {
+    --pozadi: #1e1e1e;
+    --seda-pole: #2d2d2d;
+    --modra-akcent: #326B9B;
+    --bila: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background-color: var(--pozadi);
+    color: var(--modra-akcent);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.header {
+    width: 100%;
+    height: 400px;
+    background-image: url('obrazky/pozadi.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid var(--modra-akcent);
+}
+
+.logo {
+    width: 220px;
+    height: 220px;
+    background-color: var(--bila);
+    border: 4px solid var(--modra-akcent);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+.logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.sloupec-vlevo, .sloupec-vpravo { flex: 1; }
+
+.svisla-cara { width: 1px; background-color: #444; }
+
+.modry-nadpis { text-transform: lowercase; font-size: 1.8rem; margin-bottom: 20px; color: var(--modra-akcent); }
+
+input, select, textarea {
+    width: 100%;
+    background-color: var(--seda-pole);
+    border: 1px solid #444;
+    color: var(--bila);
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+input::placeholder, textarea::placeholder { color: #9aa6b3; }
+
+input:focus, textarea:focus { border-color: var(--modra-akcent); outline: none; }
+
+.tlacitko-akce {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--modra-akcent);
+    color: var(--modra-akcent);
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.tlacitko-akce:hover { background: var(--modra-akcent); color: var(--bila); }
+
+.tabulka-dat { width: 100%; border-collapse: collapse; color: var(--bila); margin-top: 10px; }
+.tabulka-dat thead th { text-align: left; border-bottom: 2px solid var(--modra-akcent); padding: 10px; color: var(--modra-akcent); }
+.tabulka-dat tbody td { padding: 10px; border-bottom: 1px solid #333; vertical-align: middle; }
+
+.smazat-btn { background: none; border: none; color: #ff5555; cursor: pointer; font-size: 1.2rem; }
+
+@media (max-width: 900px) {
+    .container { flex-direction: column; margin: 20px; }
+    .header { height: 260px; }
+    .logo { width: 160px; height: 160px; }
+    .modry-nadpis { font-size: 1.4rem; }
+}

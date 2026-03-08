@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hudební Databáze</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
+    <header class="header">
+        <div class="logo"><img src="obrazky/logo.png" alt="Logo"></div>
+    </header>
+
+    <main class="container">
+        <section class="sloupec-vlevo">
+            <h2 class="modry-nadpis">přidat skladbu</h2>
+            <form id="formular-pridani">
+                <input id="nazev" type="text" placeholder="Píseň" required />
+                <input id="interpret" type="text" placeholder="Interpret" required />
+                <input id="rok" type="number" placeholder="Rok vydání" required />
+                <button type="submit" class="tlacitko-akce">Uložit do databáze</button>
+            </form>
+        </section>
+
+        <div class="svisla-cara"></div>
+
+        <section class="sloupec-vpravo">
+            <h2 class="modry-nadpis">knihovna</h2>
+            <input type="text" id="vyhledavac" placeholder="Hledej podle písně, autora nebo roku..." />
+            <table class="tabulka-dat">
+                <thead>
+                    <tr>
+                        <th>Píseň</th>
+                        <th>Umělec</th>
+                        <th>Rok</th>
+                    </tr>
+                </thead>
+                <tbody id="vystup-dat">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="skript.js"></script>
 </body>
 </html>
